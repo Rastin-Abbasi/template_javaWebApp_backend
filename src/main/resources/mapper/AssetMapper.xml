@@ -1,0 +1,6 @@
+<mapper namespace="com.example.mapper.AssetMapper">
+    <insert id="insertAsset" parameterType="com.example.entity.AssetEntity">
+        INSERT INTO assets (asset_number, name, specifications, purchase_date, purchase_price)
+        VALUES (#{assetNumber}, #{name}, #{specifications}, #{purchaseDate}, #{purchasePrice})
+    </insert>
+</mapper>
