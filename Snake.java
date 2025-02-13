@@ -1,7 +1,14 @@
+import java.util.ArrayList;
+import java.util.List;
+
 class Snake {
     private int length;
     private String direction;
     private List<Integer> position;
+
+    public Snake() {
+        this.position = new ArrayList<>();
+    }
 
     // Function to initialize the snake
     public void initializeSnake() {
@@ -18,6 +25,14 @@ class Snake {
 
     // Function to update the snake's position
     public void updatePosition() {
-        // Update position based on direction
+        if (this.direction.equals("up")) {
+            this.position.set(1, this.position.get(1) + 1);
+        } else if (this.direction.equals("down")) {
+            this.position.set(1, this.position.get(1) - 1);
+        } else if (this.direction.equals("left")) {
+            this.position.set(0, this.position.get(0) - 1);
+        } else if (this.direction.equals("right")) {
+            this.position.set(0, this.position.get(0) + 1);
+        }
     }
 }
